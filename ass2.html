@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ass2</title>
+    <link rel="stylesheet" href="ass2.css">
+
+    <script>
+          function hoTen() {
+            var x = document.getElementById("firstName");
+            var y = document.getElementById("lastName");
+            if (x.value == "" && y.value == "") {
+                document.getElementById("check_firstName").innerHTML = "<b>" + "Vui lòng nhập đầy đủ thông tin" + "</b>";
+                document.getElementById("check_lastName").innerHTML = "<b>" + "Vui lòng nhập đầy đủ thông tin" + "</b>";
+            }
+            if (x.value == "") {
+                document.getElementById("check_firstName").innerHTML = "<b>" + "Vui lòng nhập đầy đủ thông tin" + "</b>";
+            }
+            if (y.value == "") {
+                document.getElementById("check_lastName").innerHTML = "<b>" + "Vui lòng nhập đầy đủ thông tin" + "</b>";
+            }
+            else {
+                return true;
+            }
+        }
+        function ngaySinh() {
+            var a = document.getElementById("date");
+            if (a.value == "") {
+                    document.getElementById("check_date").innerHTML = "<b>" + "Vui lòng nhập lại" + "</b>";
+                
+            }
+            else {
+                return true;
+            }
+        }
+        function email() {
+            var Mail	=	/\w{1,}+@\w{1,}+\.\w{1,}/;
+            var x = document.getElementById("mail");
+            if (isNaN(x.value)) {
+                document.getElementById("check_mail").innerHTML = "<b>" + "Mail không hợp lệ" + "</b>";
+            }
+            else if (!x.value.match(Mail)) {
+                document.getElementById("check_mail").innerHTML = "<b>" + "Vui lòng nhập Mail của bạn " + "</b>";
+            }
+            else {
+                return true;
+            }
+        }
+       
+        function none(num) {
+            if (num == 0) {
+                document.getElementById("check_firstName").innerHTML = "";
+            }
+            if(num == 1){
+                document.getElementById("check_lastName").innerHTML = "";
+            }
+            if(num == 2){
+                document.getElementById("check_date").innerHTML = "";
+            }
+            if(num == 3){
+                document.getElementById("check_mail").innerHTML = "";
+            }
+           
+        }
+        function Kiem_tra() {
+            hoTen();
+            ngaySinh();
+            email();
+            if (hoTen() && ngaySinh() && email()) {
+                document.getElementById("menu").innerHTML = "<h2>" + "Đăng ký thành công" + "</h2>";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="menu">
+        <div class="head-link"> 
+        
+            <img src="ass1/logo-text.png" width="200" height="68">  ///
+          <a href="ass.html">Trang chủ</a> |
+            <a href="#">Giới thiệu</a> |
+            <a href="#">Sản phẩm</a> |
+            <a href="#">Tin tức </a> |
+            <a href="#">Liên hệ</a> \\\
+        
+         <input type="text" name="search" id="search" placeholder="Nội dung tìm kiếm..." >
+         <div class="dk">
+            <a href="ass2.html">Đăng kí</a>  /
+            <a href="dangnhap.html">Đăng nhập</a>
+        </div>
+    </div>
+    <div class="head">
+       <a href="#"> <img id="anh" src="ass1/realme.jpg" width="100%"> </a>
+<hr>
+       
+        <div id="head-1">
+    <h1>ĐĂNG KÍ </h1>
+    Tài Khoản:<a id="abu" >(*)</a> 
+    <input type="text" id="firstName" name="msv"><br><br>
+    
+            <p id="check_firstName"></p>
+ 
+    Mật khẩu: <a id="abu">(*)</a>
+    <input type="password" id="lastName"><br><br>
+ 
+            <p id="check_lastName"></p>
+ 
+    Ngày đăng kí:<a id="abu">(*)</a>
+    <input type="date" id="date"><br><br>
+
+            <p id="check_date"></p>
+     
+
+    Email:   <a id="abu">(*)</a> .  .  .
+    <input type="email" id="mail"><br><br>
+ 
+            <p id="check_mail"></p>
+   
+
+    Quốc tịch:<a id="abu">(*)</a>
+    <input list="qt" placeholder="Chọn Quốc Tịch">
+   <datalist id="qt" >
+
+    <option value="Việt Nam"></option>   
+    <option value="JaPan"></option>  
+    <option value="China"></option>  
+   </datalist>   <br><br>
+   Ghi chú:<br>
+   <textarea  cols="50" rows="5"></textarea><br>
+   
+   <button type="button" onclick="Kiem_tra();">Đăng kí</button>
+   <button type="reset" id="lamlai"> <a href="ass2.html">Làm lại</a> </button>
+ </div>
+</body>
+</html>
