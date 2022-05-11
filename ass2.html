@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ass2</title>
+    <title>Đăng kí</title>
     <link rel="stylesheet" href="ass2.css">
 
+
     <script>
-          function hoTen() {
+        function hoTen() {
             var x = document.getElementById("firstName");
             var y = document.getElementById("lastName");
             if (x.value == "" && y.value == "") {
@@ -19,119 +21,133 @@
             }
             if (y.value == "") {
                 document.getElementById("check_lastName").innerHTML = "<b>" + "Vui lòng nhập đầy đủ thông tin" + "</b>";
-            }
-            else {
+            } else {
                 return true;
             }
         }
+
         function ngaySinh() {
             var a = document.getElementById("date");
             if (a.value == "") {
-                    document.getElementById("check_date").innerHTML = "<b>" + "Vui lòng nhập lại" + "</b>";
-                
-            }
-            else {
+                document.getElementById("check_date").innerHTML = "<b>" + "Vui lòng nhập lại" + "</b>";
+
+            } else {
                 return true;
             }
         }
+
         function email() {
-            var Mail	=	/\w{1,}+@\w{1,}+\.\w{1,}/;
+            var Mail = new RegExp("\\w+@\\w+(\\.\\w+){1,2}", "g");
             var x = document.getElementById("mail");
-            if (isNaN(x.value)) {
-                document.getElementById("check_mail").innerHTML = "<b>" + "Mail không hợp lệ" + "</b>";
-            }
-            else if (!x.value.match(Mail)) {
-                document.getElementById("check_mail").innerHTML = "<b>" + "Vui lòng nhập Mail của bạn " + "</b>";
-            }
-            else {
+            if (!isNaN(x.value)) {
+                document.getElementById("check_mail").innerHTML = "<b>" + "Vui lòng nhập Mail của bạn" + "</b>";
+            } else if (!x.value.match(Mail)) {
+                document.getElementById("check_mail").innerHTML = "<b>" + " Mail không hợp lệ" + "</b>";
+            } else {
                 return true;
             }
         }
-       
+
         function none(num) {
             if (num == 0) {
                 document.getElementById("check_firstName").innerHTML = "";
             }
-            if(num == 1){
+            if (num == 1) {
                 document.getElementById("check_lastName").innerHTML = "";
             }
-            if(num == 2){
+            if (num == 2) {
                 document.getElementById("check_date").innerHTML = "";
             }
-            if(num == 3){
+            if (num == 3) {
                 document.getElementById("check_mail").innerHTML = "";
             }
-           
+
         }
+
         function Kiem_tra() {
             hoTen();
             ngaySinh();
             email();
             if (hoTen() && ngaySinh() && email()) {
-                document.getElementById("menu").innerHTML = "<h2>" + "Đăng ký thành công" + "</h2>";
+                document.getElementById("main").innerHTML = "<h2>" + "Đăng ký thành công" + "</h2>";
             }
         }
     </script>
 </head>
+
 <body>
+    <div class="main">
+        <div class="home">
+            <div class="head-link">
+                <div class="bot">
+                    <img src="//theme.hstatic.net/1000377277/1000482822/14/logo.png?v=1258" width="200" height="68">
+                </div>
 
-    <div id="menu">
-        <div class="head-link"> 
-        
-            <img src="ass1/logo-text.png" width="200" height="68">  ///
-          <a href="ass.html">Trang chủ</a> |
-            <a href="#">Giới thiệu</a> |
-            <a href="#">Sản phẩm</a> |
-            <a href="#">Tin tức </a> |
-            <a href="#">Liên hệ</a> \\\
-        
-         <input type="text" name="search" id="search" placeholder="Nội dung tìm kiếm..." >
-         <div class="dk">
-            <a href="ass2.html">Đăng kí</a>  /
-            <a href="dangnhap.html">Đăng nhập</a>
+                <div class="head-bot">
+                    <a href="ass.html">Trang chủ</a>
+                    <a href="#">Giới thiệu</a>
+                    <a href="#">Sản phẩm</a>
+                    <a href="#">Tin tức </a>
+                    <a href="#">Liên hệ</a>
+                </div>
+                <div class="dk">
+                    <a href="ass2.html">Đăng kí</a> /
+                    <a href="dangnhap.html">Đăng nhập</a>
+                </div>
+
+            </div>
         </div>
-    </div>
-    <div class="head">
-       <a href="#"> <img id="anh" src="ass1/realme.jpg" width="100%"> </a>
-<hr>
-       
-        <div id="head-1">
-    <h1>ĐĂNG KÍ </h1>
-    Tài Khoản:<a id="abu" >(*)</a> 
-    <input type="text" id="firstName" name="msv"><br><br>
-    
-            <p id="check_firstName"></p>
- 
-    Mật khẩu: <a id="abu">(*)</a>
-    <input type="password" id="lastName"><br><br>
- 
-            <p id="check_lastName"></p>
- 
-    Ngày đăng kí:<a id="abu">(*)</a>
-    <input type="date" id="date"><br><br>
+        <div class="head-1">
+            <h1>ĐĂNG KÍ </h1>
+            <div class="nav_1">
 
-            <p id="check_date"></p>
-     
+                <label>Tài Khoản:</label><a id="abu">(*)</a>
+                <input type="text" id="firstName" name="msv"><br><br>
 
-    Email:   <a id="abu">(*)</a> .  .  .
-    <input type="email" id="mail"><br><br>
- 
-            <p id="check_mail"></p>
-   
+                <p id="check_firstName"></p>
 
-    Quốc tịch:<a id="abu">(*)</a>
-    <input list="qt" placeholder="Chọn Quốc Tịch">
-   <datalist id="qt" >
+                <label>Mật khẩu:</label> <a id="abu">(*)</a>
+                <input type="password" id="lastName"><br><br>
+
+                <p id="check_lastName"></p>
+
+                <label>Ngày đăng kí:</label><a id="abu">(*)</a>
+                <input type="date" id="date"><br><br>
+
+                <p id="check_date"></p>
+
+
+                <label>Email:</label> <a id="abu">(*)</a>
+                <input type="email" id="mail"><br><br>
+
+                <p id="check_mail"></p>
+
+
+                <label>Quốc tịch:</label><a id="abu">(*)</a>
+                <input type="list" list="qt" placeholder="Chọn Quốc Tịch">
+                <datalist id="qt">
 
     <option value="Việt Nam"></option>   
     <option value="JaPan"></option>  
     <option value="China"></option>  
-   </datalist>   <br><br>
-   Ghi chú:<br>
-   <textarea  cols="50" rows="5"></textarea><br>
-   
-   <button type="button" onclick="Kiem_tra();">Đăng kí</button>
-   <button type="reset" id="lamlai"> <a href="ass2.html">Làm lại</a> </button>
- </div>
+   </datalist> <br><br>
+
+                <input type="button" onclick="Kiem_tra();" value="Đăng kí">
+
+                <button type="reset"><a id="lamlai" href="ass2.html">Làm lại</a></button>
+            </div>
+        </div>
+
+        <hr>
+        <div class="footer">
+            <center>
+                <h4>Hệ Thống Điện Thoại ISHOPmobile.vn</h4>
+                Địa chỉ: Nam Từ Liêm, Hà Nội / Điện thoại: 01682223456 / <br> Email: haonaph11346@fpt.edu.vn
+
+            </center>
+        </div>
+    </div>
 </body>
+
+
 </html>

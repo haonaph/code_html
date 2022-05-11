@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function delay() {
+            window.location = "https://www.google.com/";
+        }
+
+        function giai(form) {
+            var x1, x2;
+            var x, y, z, dl;
+
+            x = parseInt(form.a.value);
+            y = parseInt(form.b.value);
+            z = parseInt(form.c.value);
+            dl = x + y + z;
+
+            if (dl < 0)
+                alert("VNo");
+
+            else {
+                x1 = x + y;
+                x2 = y + z;
+                form.x.value = eval(x1);
+                form.y.value = eval(x2);
+            }
+
+            window.setTimeout('delay()', 2000)
+        }
+
+        var wd;
+
+        function mo() {
+            wd = window.open('"https://www.google.com/"')
+        }
+
+        function dong() {
+            if (wd.closed == false)
+                wd.close();
+        }
+
+        function hienthi() {
+            if (wd.closed == false) alert('MỞ')
+            else
+                alert('ĐÓNG')
+        }
+    </script>
+</head>
+
+<body>
+    <form method="post" onload="setTimeout('delay()',1000)">
+
+        <div class="product">
+            <br> Nhap gia tri a:<input type="text" name="a" value="">
+            <br> Nhap gia tri b:<input type="text" name="b" value="">
+            <br> Nhap gia tri c:<input type="text" name="c" value=""> <br> <br>DS:
+            <br>
+            <br> gia tri 1:<input type="text" name="x" value="">
+            <br> gia tri 2:<input type="text" name="y" value="">
+            <input type="button" value="giai" onclick="giai(this.form)">
+
+
+            <input type="button" value="MỞ" onclick="mo()">
+            <input type="button" value="Đóng" onclick="dong()">
+            <input type="button" value="Hiển thị" onclick="hienthi()">
+        </div>
+    </form>
+
+</body>
+
+</html>

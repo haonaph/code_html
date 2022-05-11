@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="angularjs.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div ng-controller="topController">
+
+        <div ng-controller="myController" ng-init="Demo='Hello World'">
+            <h1 style="text-align:center;">{{message}}</h1>
+            {{Demo}}
+
+
+
+        </div>
+        <br>
+        <div ng-controller="myController1">
+            <input type="text" ng-model="smile.name">
+            <input type="text" ng-model="smile.age">
+            <input type="text" ng-model="smile.gender">
+            <button ng-click="sayhe()">Click</button><br><br> Name:{{smile.name}} <br> Age:{{smile.age}} <br> Gender:{{smile.gender}} <br> {{message}}
+
+        </div>
+
+        <div welcome-to>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div ng-controller="myController2">
+        <input type="text" ng-model="name">
+        <button ng-click="sayhe()">Click</button><br><br> Name:{{name}} <br>
+
+
+    </div>
+
+    <div ng-controller="myController3">
+        <ul>
+            <li ng-repeat="country in countries"> {{country.name}}</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

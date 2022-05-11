@@ -1,42 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập</title>
-    <link rel="stylesheet" href="ass2.css">
+    <link rel="stylesheet" href="dangnhap.css">
+    <script type="text/javascript">
+        function Name() {
+            var name = document.getElementById('name');
+            if (name.value.length == 0) {
+                document.getElementById('check_name').innerHTML = "❌Vui lòng nhập tên!";
+                return false;
+            } else {
+                document.getElementById('check_name').innerHTML = "✔";
+                return true;
+            }
+        }
+
+        function pass() {
+            var pw = document.getElementById('pw');
+            if (pw.value.length == 0) {
+                document.getElementById('check_pw').innerHTML = "❌Vui lòng nhập pass!";
+                return false;
+            } else {
+                document.getElementById('check_pw').innerHTML = "✔";
+                return true;
+            }
+        }
+
+        function check() {
+            Name();
+            pass();
+            if (Name() && pass()) {
+                alert('Đăng nhập thành công.');
+                document.getElementById('main').innerHTML = '<a href="ass.html">' + '</a>';
+            }
+            return true;
+        }
+    </script>
 </head>
+
 <body>
-    <div id="menu">
-        <div class="head-link"> 
-        
-            <img src="ass1/logo-text.png" width="200" height="68">  ///
-          <a href="ass.html">Trang chủ</a> |
-            <a href="#">Giới thiệu</a> |
-            <a href="#">Sản phẩm</a> |
-            <a href="#">Tin tức </a> |
-            <a href="#">Liên hệ</a> \\\
-        
-         <input type="text" name="search" id="search" placeholder="Nội dung tìm kiếm..." >
-         <div class="dk">
-            <a href="ass2.html">Đăng kí</a>  /
-            <a href="#">Đăng nhập</a>
+
+    <div class="main">
+        <div class="home">
+            <div class="head-link">
+                <div class="bot">
+                    <img src="//theme.hstatic.net/1000377277/1000482822/14/logo.png?v=1258" width="200" height="68">
+                </div>
+
+                <div class="head-bot">
+                    <a href="ass.html">Trang chủ</a>
+                    <a href="#">Giới thiệu</a>
+                    <a href="#">Sản phẩm</a>
+                    <a href="#">Tin tức </a>
+                    <a href="#">Liên hệ</a>
+                </div>
+                <div class="dk">
+                    <a href="ass2.html">Đăng kí</a> /
+                    <a href="dangnhap.html">Đăng nhập</a>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+        <div class="nav">
+            <div class="nav_1">
+                <h1>ĐĂNG NHẬP </h1>
+                <br> Tài Khoản:<a id="abu">(*)</a>
+                <input type="text" id="name"><br><br>
+                <span id="check_name"></span>
+
+                <br>Mật khẩu: <a id="abu">(*)</a>
+                <input type="password" id="pw"><br><br>
+                <span id="check_pw"></span><br>
+                <small class="font_weight">Don't have an account? <a class="text-danger"
+                    href="ass2.html">Register</a></small>
+                <p id="check_lastName"></p>
+                <input type="submit" value="Đăng nhập" onclick="check()">
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="footer">
+            <center>
+                <h4>Hệ Thống Điện Thoại ISHOPmobile.vn</h4>
+                Địa chỉ: Nam Từ Liêm, Hà Nội / Điện thoại: 01682223456 / <br> Email: haonaph11346@fpt.edu.vn
+
+            </center>
         </div>
     </div>
-    <div class="head">
-       <a href="#"> <img id="anh" src="ass1/realme.jpg" width="100%"> </a>
-<hr>
 
-<h1>ĐĂNG NHẬP </h1>
-    Tài Khoản:<a id="abu" >(*)</a> 
-    <input type="text" id="firstName" name="msv"><br><br>
-    
-            <p id="check_firstName"></p>
- 
-    Mật khẩu: <a id="abu">(*)</a>
-    <input type="password" id="lastName"><br><br>
- 
-            <p id="check_lastName"></p>
-    <button type="button"><a href="ass.html">Đăng nhập</a></button>
 </body>
+
 </html>

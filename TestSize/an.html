@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ass1</title>
+    <link rel="stylesheet" href="ass.css">
+
+    <script type="text/javascript">
+        var images = ["ass1/realme.jpg", "ass1/huawei.png", "ass1/iPhone7_Plus.jpg", "ass1/iPhone_11.jpg"];
+        num = 0;
+
+        function next() {
+            var x = document.getElementById("anh");
+            num++;
+            if (num >= images.length) {
+                num = 0;
+            }
+            x.src = images[num];
+        }
+
+        function prev() {
+            var x = document.getElementById("anh");
+            num--;
+            if (num < 0) {
+                num = images.length - 1;
+            }
+            x.src = images[num];
+        }
+        setInterval(next, 3500);
+    </script>
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="home">
+            <div class="head-link">
+                <div class="bot">
+                    <a href="ass.html"><img src="//theme.hstatic.net/1000377277/1000482822/14/logo.png?v=1258" width="200" height="68"></a>
+                </div>
+
+
+                <div class="head-bot">
+                    <a href="#">Trang chủ</a>
+                    <a href="#">Giới thiệu</a>
+                    <a href="#">Sản phẩm</a>
+                    <a href="#">Tin tức </a>
+                    <a href="#">Liên hệ</a>
+                </div>
+                <div class="dk">
+                    <a href="ass2.html">Đăng kí</a> /
+                    <a href="dangnhap.html">Đăng nhập</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="head">
+            <img id="anh" src="ass1/realme.jpg" width="100%">
+            <hr>
+            <button class="next" onclick="next()"> > </button>
+            <button class="prev" onclick="prev()">  < </button>
+
+
+        </div>
+        <div class="id">
+            <h4 style="line-height: 50px;">SẢN PHẨM MỚI (HOT) </h4>
+        </div>
+        <div class="line-5">
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/aa1.jfif" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">Iphone XS</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey"> 14,950,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/aa2.png" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">Vsmart E72</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">4,950,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/aa3.jfif" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">Realmi</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">5,999,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/aaa.png" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">Vsmart E81</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">9,950,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/aa1.jfif" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">Iphone XS</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">14,950,000 ₫</p>
+                </div>
+            </div>
+
+
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/aa2.png" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">Vsmart E72</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">4,950,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/aa3.jfif" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">Realmi</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">5,999,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/aaa.png" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">Vsmart E81</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">9,950,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/b2.png" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">OPPO A9</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">4,950,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/c2.jfif" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">SAMSUNG M30s</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">7,550,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/c3.png" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">SAMSUNG A51</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">4,450,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/b1.png" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">OPPO Z1</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">9,950,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/b2.png" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">OPPO A9</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">4,950,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/c2.jfif" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">SAMSUNG M30s</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">7,550,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/c3.png" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">SAMSUNG A51</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">4,450,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/b1.png" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">OPPO Z1</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">9,950,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/aa1.jfif" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">Iphone XS</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey"> 14,950,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/aa2.png" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">Vsmart E72</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">4,950,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/aa3.jfif" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">Realmi</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">5,999,000 ₫</p>
+                </div>
+            </div>
+            <div class="product">
+                <p class="prd">Hot</p>
+                <img src="ass1/aaa.png" width="179" height="179">
+                <div class="prd-top">
+                    <p class="name"><a href="#">Vsmart E81</a></p>
+                </div>
+                <div class="prd-bot">
+                    <p class="monkey">9,950,000 ₫</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="footer">
+            <center>
+                <h4>Hệ Thống Điện Thoại ISHOPmobile.vn</h4>
+                Địa chỉ: Nam Từ Liêm, Hà Nội / Điện thoại: 01682223456 / Fptshop.com.vn /<br> Email: haonaph11346@fpt.edu.vn
+
+            </center>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

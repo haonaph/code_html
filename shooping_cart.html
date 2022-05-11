@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Giỏ Hàng</title>
+    <link rel="stylesheet" href="shopping_cart.css">
+</head>
+
+<body ng-app="myApp">
+    <div class="main" ng-controller="shopContrl">
+        <div class="head-link">
+            <div class="bot">
+                <a href="ass.html"><img src="//theme.hstatic.net/1000377277/1000482822/14/logo.png?v=1258" width="200" height="68"></a>
+            </div>
+
+
+            <div class="head-bot">
+                <a href="ass.html">Trang chủ</a>
+                <a href="#">Giới thiệu</a>
+                <a href="#">Sản phẩm</a>
+                <a href="#">Tin tức </a>
+                <a href="#">Liên hệ</a>
+
+            </div>
+            <div class="dk">
+                <a href="ass2.html">Đăng kí</a> /
+                <a href="dangnhap.html">Đăng nhập</a>
+            </div>
+            <a class="nav-3" href="#">🛒</a>
+        </div>
+
+        <div class="line-5">
+            <div class="product">
+                <div class="id">
+                    <h3 style="line-height: 50px;">Danh sách sản phẩm </h3>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>Sản phẩm</td>
+                            <td>Đơn giá</td>
+                            <td>Số lượng</td>
+                            <td>Thành tiền</td>
+                            <td colspan="1">Thao tác</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in items" ng-init="item.qty = 1">
+                            <td> <input type="checkbox" ng-model="item.buy"></td>
+                            <td ng-bind="item.name"></td>
+                            <td ng-bind="item.price | currency"></td>
+                            <td><input class="qty" type="number" ng-model="item.qty" min="1" ng-disabled="!item.buy"></td>
+                            <td ng-bind="item.price * item.qty | currency"></td>
+                            <td>🗑</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="amout">
+                    Tổng Tiền: <strong style="color:#d00">{{getAmouts()}}$</strong>
+                </div>
+            </div>
+
+            <div class="product-s">
+                <div class="id">
+                    <h3 style="line-height: 50px;">Mua Hàng </h3>
+                </div>
+                <label><h3>Địa chỉ:</h3></label>
+                <input class="context" type="text">
+                <br><br>
+                <input type="submit" value="Đặt hàng" style="width: 100px;">
+            </div>
+
+        </div>
+        <hr>
+        <div class="footer">
+            <center>
+                <h4>Hệ Thống Điện Thoại ISHOPmobile.vn</h4>
+                Địa chỉ: Nam Từ Liêm, Hà Nội / Điện thoại: 01682223456 / Fptshop.com.vn /<br> Email: haonaph11346@fpt.edu.vn
+
+            </center>
+        </div>
+    </div>
+    <script type="text/javascript" src="TestAGLBig/angularjs.min.js"></script>
+    <script src="shopController.js"></script>
+</body>
+
+</html>

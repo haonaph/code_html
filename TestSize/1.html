@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/TestAGLBig/angularjs.min.js"></script>
+    <script src="/TestAGLBig/app.js" ></script>
+</head>
+<body>
+    <div class="product" ng-controller="myController1">
+        <p class="prd">Hot</p>
+        <img src="{{smile.anh}}" width="179" height="179">
+        <div class="prd-top">
+            <p class="name"><a href="#">{{smile.name}}</a></p>
+        </div>
+        <div class="prd-bot">
+            <p class="monkey"> {{smile.age}}</p>
+        </div>
+        <div class="btn-top">
+            <a class="btn-t" href="">Thêm giỏ hàng</a>
+            <a class="btn-m" href="">Mua ngay</a>
+        </div>
+    </div>
+</body>
+</html>
